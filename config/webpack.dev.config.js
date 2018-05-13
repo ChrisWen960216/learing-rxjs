@@ -1,42 +1,42 @@
 const path = require('path');
-const htmlPlugin = require('html-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode:'development',
+  mode: 'development',
   entry: {
-    entry: path.join(__dirname, '../src/app/index.js')
+    entry: path.join(__dirname, '../src/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
   },
   module: {
     rules: [
       {
         test: /\.less$/,
-        use:['style-loader','css-loader','less-loader']
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.(jsx|js)$/,
         use: {
-          loader:'babel-loader'
+          loader: 'babel-loader',
         },
-        exclude:/node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   plugins: [
-    new htmlPlugin({
+    new HtmlPlugin({
       minify: {
-          removeAttributeQuotes: true
+        removeAttributeQuotes: true,
       },
       hash: true,
-      template: path.join(__dirname,'../static/index.html')
-  })
+      template: path.join(__dirname, '../static/index.html'),
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     host: 'localhost',
     compress: true,
-    port: 1717
-  }
+    port: 1717,
+  },
 };
