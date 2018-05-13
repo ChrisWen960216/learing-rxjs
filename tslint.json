@@ -1,0 +1,11 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-alloy"
+    ],
+    "jsRules": {},
+    "rules": {
+        "indent":[true,"spaces",2]
+    },
+    "rulesDirectory": []
+}

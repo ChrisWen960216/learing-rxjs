@@ -1,0 +1,42 @@
+{
+  "name": "learing-rxjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:ts": "tsc",
+    "dev": "webpack-dev-server --config config/webpack.dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisWen960216/learing-rxjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisWen960216/learing-rxjs/issues"
+  },
+  "homepage": "https://github.com/ChrisWen960216/learing-rxjs#readme",
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^2.30.3",
+    "@types/node": "^10.0.8",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "rxjs": "^6.1.0",
+    "style-loader": "^0.21.0",
+    "tslint": "^5.10.0",
+    "tslint-config-alloy": "^0.1.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
