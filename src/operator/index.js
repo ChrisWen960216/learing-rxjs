@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/let';
+import { map } from 'rxjs/operators';
+
+console.log(map);
 
 const source$ = Observable.of(1, 2, 3);
-const doubule$ = obs$ => obs$.map(x => x * 2);
-const result$ = source$.let(doubule$);
+const result$ = source$.pipe(map(value => value * 2));
 
 result$.subscribe(console.log);
