@@ -1,8 +1,6 @@
 // import { Observable } from 'rxjs';
 import './operator/index';
 import './stream/index';
-import './stream/async';
-import './stream/from';
 // observable just has one status --- complete or error
 // const onSubscribe = (observer) => {
 //   observer.next(1);

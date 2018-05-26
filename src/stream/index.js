@@ -1,3 +1,2 @@
-import './of';
-import './range';
-import './loop';
+// import './single/index';
+import './merge/index';
