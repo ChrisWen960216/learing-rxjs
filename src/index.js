@@ -1,7 +1,9 @@
 // import { Observable } from 'rxjs';
-import './operator/index';
-import './stream/index';
-import './high/index';
+// import './operator/index';
+// import './stream/index';
+// import './high/index';
+import './high/map';
+
 // observable just has one status --- complete or error
 // const onSubscribe = (observer) => {
 //   observer.next(1);
