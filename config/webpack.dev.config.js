@@ -38,5 +38,6 @@ module.exports = {
     host: 'localhost',
     compress: true,
     port: 1717,
+    open: true,
   },
 };
