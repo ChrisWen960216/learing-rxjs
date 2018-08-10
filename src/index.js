@@ -1,13 +1,8 @@
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/take';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-const tick$ = Observable.interval(1000).take(3);
-const subject = new Subject();
-tick$.subscribe(subject);
-
-subject.subscribe(value => console.log('Observable 1:', value));
-setTimeout(() => {
-  subject.subscribe(value => console.log('Observable 2:', value));
-}, 1500);
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
