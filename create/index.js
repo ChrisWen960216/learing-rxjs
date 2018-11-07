@@ -4,7 +4,10 @@
  *  创建Observable
  */
 
-import { Observable, interval, empty } from 'rxjs';
+import {
+  Observable, interval, empty, fromEvent,
+} from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const hello$ = Observable.create((observer) => {
   observer.next('Hello');
@@ -17,3 +20,13 @@ const empty$ = empty();
 hello$.subscribe(console.log);
 timeInterval$.subscribe(number => console.log(number * 2));
 empty$.subscribe({ complete: () => console.log('Completed') });
+
+/**
+ * Create a button click observable
+ */
+const $clikBtn = document.getElementById('click-btn');
+const clickBtn$ = fromEvent($clikBtn, 'click');
+
+clickBtn$.pipe(
+  map(e => `Click Time ${e.timeStamp}`),
+).subscribe(console.log);
