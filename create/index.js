@@ -7,7 +7,8 @@
 import {
   Observable, interval, empty, fromEvent,
 } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, concatAll } from 'rxjs/operators';
+import 'rxjs/add/operator/take';
 
 const hello$ = Observable.create((observer) => {
   observer.next('Hello');
@@ -25,8 +26,12 @@ empty$.subscribe({ complete: () => console.log('Completed') });
  * Create a button click observable
  */
 const $clikBtn = document.getElementById('click-btn');
+const $numContainer = document.getElementById('number-container');
 const clickBtn$ = fromEvent($clikBtn, 'click');
 
 clickBtn$.pipe(
-  map(e => `Click Time ${e.timeStamp}`),
-).subscribe(console.log);
+  map(() => interval(1000).take(10)),
+  concatAll(),
+).subscribe({
+  next: (value) => { $numContainer.innerHTML = value; },
+});
