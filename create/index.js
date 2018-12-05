@@ -7,8 +7,8 @@
 import {
   Observable, interval, empty, fromEvent,
 } from 'rxjs';
-import { map, concatAll } from 'rxjs/operators';
-import 'rxjs/add/operator/take';
+import { map, concatAll, take } from 'rxjs/operators';
+// import 'rxjs/add/operator/take';
 
 const hello$ = Observable.create((observer) => {
   observer.next('Hello');
@@ -30,7 +30,7 @@ const $numContainer = document.getElementById('number-container');
 const clickBtn$ = fromEvent($clikBtn, 'click');
 
 clickBtn$.pipe(
-  map(() => interval(1000).take(10)),
+  map(() => interval(1000).pipe(take(100))),
   concatAll(),
 ).subscribe({
   next: (value) => { $numContainer.innerHTML = value; },
