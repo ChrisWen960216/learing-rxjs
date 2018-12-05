@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ChrisWen960216/learing-rxjs#readme",
   "dependencies": {
     "colors": "^1.3.2",
+    "events": "^3.0.0",
     "parcel": "^1.10.3",
     "rxjs": "^6.3.3"
   },
