@@ -1,4 +1,4 @@
-import { fromEvent, from } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { tap } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ const personInfo$ = ajax('https://api.github.com/users/ChrisWen960216', { respon
     tap((value) => { rootElem.innerHTML = `<h1>${value.response.login}</h1>`; }),
   );
 
-const fetch$ = from(fetch('https://api.github.com/users/ChrisWen960216')).pipe(tap(res => console.log(res.body))).subscribe();
+// const fetch$ = from(fetch('https://api.github.com/users/ChrisWen960216')).pipe(tap(res => console.log(res.body))).subscribe();
 
 
 fromEvent(btnElem, 'click')
